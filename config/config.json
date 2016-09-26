@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "hacktiv8-7",
+    "password": "password",
+    "database": "rest_basic",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "hacktiv8-7",
+    "password": "password",
+    "database": "rest_basic",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "hacktiv8-7",
+    "password": "password",
+    "database": "rest_basic",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
