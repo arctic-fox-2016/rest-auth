@@ -1,1 +1,1 @@
-# rest-auth
+# rest-basic
