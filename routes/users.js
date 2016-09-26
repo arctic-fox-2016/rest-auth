@@ -8,32 +8,6 @@ let app = express()
 
 router.use(bodyParser.urlencoded({extended:true}))
 
-router.post('/users/authenticate', function(req,res,next){
-  model.admin.findAll({where:{username: req.body.username}}).then(function(result){
-    if(result.length<1){
-      res.json({success:false, message: 'Authetication failed. User not found'})
-    } else {
-      if (result[0].password == req.body.password){
-        let token = jwt.sign(result[0].dataValues, 'yeah', {expiresIn: "10h"})
-        res.json({success: true, message: 'Authentication is successful', token: token})
-      } else {
-        res.json({success: false, message: 'Authentication failed. Password does not match'})
-      }
-    }
-  })
-})
-
-router.post('/go',function(req,res,next){
-  jwt.verify(req.body.token,'yeah', function(err,decoded){
-    if(err){
-      res.json({success: false, message: 'Failed to authenticate token'})
-    } else {
-      req.decoded = decoded
-      res.send(req.decoded)
-    }
-  })
-})
-
 router.get('/users', function(req,res,next){
   model.admin.findAll().then(function(result){
     res.json(result)
