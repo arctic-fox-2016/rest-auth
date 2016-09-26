@@ -1,0 +1,30 @@
+{
+  "name": "rest-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "6.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arctic-fox-2016/rest-basic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arctic-fox-2016/rest-basic/issues"
+  },
+  "homepage": "https://github.com/arctic-fox-2016/rest-basic#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "pg": "^6.1.0",
+    "sequelize": "^3.24.3",
+    "sequelize-cli": "^2.4.0"
+  }
+}

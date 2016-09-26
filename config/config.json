@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "andrew",
+    "password": "apaapa",
+    "database": "restful",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "rdecojmbbzwwkc",
+    "password": "E1PSiGe0kEDWlkyPMyQT4ggZvJ",
+    "database": "d1f9ua1cvrpc7a",
+    "host": "ec2-54-243-248-181.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "rdecojmbbzwwkc",
+    "password": "E1PSiGe0kEDWlkyPMyQT4ggZvJ",
+    "database": "d1f9ua1cvrpc7a",
+    "host": "ec2-54-243-248-181.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  }
+}
