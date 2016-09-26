@@ -20,10 +20,6 @@ app.use(bodyParser.json())
 app.use(morgan('dev')) //use morgan to log requests to console
 
 //routes
-router.get('/', function(req,res) {
-	res.send('Ini API nya!')
-})
-
 router.post('/authenticate', function(req,res){
 	//find the user
 
@@ -53,6 +49,34 @@ router.post('/authenticate', function(req,res){
 			}
 		}
 	})
+})
+
+router.use(function(req,res,next){
+	var token = req.body.token || req.query.token || req.headers['x-access-token']
+
+	if(token) {
+		//verifies secret and checks exp
+		jwt.verify(token,app.get('secretku'), function(err, decoded){
+			if(err){
+				return res.json({ success: false, message: 'failed to authenticate token.'})
+			} else {
+				//if everything's good, save request for use in other routes
+				req.decoded = decoded
+				next()
+			}
+		})
+	} else {
+		//if there's no token
+		//return an error
+		return res.status(403).send({
+			success: false,
+			message: 'no token provided'
+		})
+	}
+})
+
+router.get('/', function(req,res) {
+	res.send('Ini API nya!')
 })
 
 router.get('/seed', function(req,res) {
