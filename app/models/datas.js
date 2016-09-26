@@ -4,5 +4,5 @@ var mongoose = require('mongoose'),
 module.exports = mongoose.model('Data', new Schema({
 	name: String,
 	password: String,
-	email: String
+	admin: Boolean
 }))
